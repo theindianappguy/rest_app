@@ -1,4 +1,4 @@
-package com.example.rest_app
+package com.theindianappguy.rest_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

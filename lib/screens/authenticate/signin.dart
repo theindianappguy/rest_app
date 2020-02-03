@@ -1,26 +1,36 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rest_app/screens/home.dart';
-import 'package:rest_app/screens/signup.dart';
+import 'package:rest_app/screens/authenticate/signup.dart';
+import 'package:rest_app/services/auth_services.dart';
 
 class SignIn extends StatefulWidget {
 
+  final Function toogleView;
+  SignIn({this.toogleView});
 
   @override
   _SignInState createState() => _SignInState();
 }
-
 class _SignInState extends State<SignIn> {
 
+  final AuthService _authService = AuthService();
   final _formKey = GlobalKey<FormState>();
-  String email, password;
+  String email = "", password = "";
+
+  bool _loading = false;
+  String error;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: _loading ? Container(
+        alignment: Alignment.center,
+        child: CircularProgressIndicator(),
+      ) : SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -85,6 +95,7 @@ class _SignInState extends State<SignIn> {
                         child: Column(
                           children: <Widget>[
                             TextFormField(
+                              validator: (val) => val.isEmpty ? "Enter Valid Email":null,
                               decoration: InputDecoration(
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(color: Colors.white)
@@ -100,6 +111,8 @@ class _SignInState extends State<SignIn> {
                             ),
                             SizedBox(height: 16,),
                             TextFormField(
+                              obscureText: true,
+                              validator: (val) => val.isEmpty ? "Enter Password":null,
                               decoration: InputDecoration(
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(color: Colors.white)
@@ -110,13 +123,27 @@ class _SignInState extends State<SignIn> {
                               ),
                               ),
                               onSaved: (val){
-                                email = val;
+                                password = val;
                               },
                             ),
                             SizedBox(height: 30,),
                             GestureDetector(
-                              onTap: (){
-                               Navigator.pushReplacementNamed(context, "/home");
+                              onTap: () async{
+                                if(_formKey.currentState.validate()){
+                                  _formKey.currentState.save();
+
+                                  setState(() {
+                                    _loading = true;
+                                  });
+                                  dynamic result =  await _authService
+                                      .signInWithEmailAndPassword(email, password);
+                                  if(result == null){
+                                    setState(() {
+                                      error = "please supply a valid email" ;
+                                      _loading = false;
+                                    });
+                                  }
+                                }
                               },
                               child: Container(
                                 alignment: Alignment.center,
@@ -150,7 +177,7 @@ class _SignInState extends State<SignIn> {
                     SizedBox(height: 30,),
                     GestureDetector(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
+                        widget.toogleView();
                       },
                       child: Text("Don't have an account?", style: GoogleFonts.roboto(
                           textStyle: TextStyle(
@@ -171,3 +198,6 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
+
+
+
