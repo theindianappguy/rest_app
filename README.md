@@ -30,7 +30,7 @@ then open the runner and there will be the "Bundle Id" copy that and
 
 #### Next > Next > Skip this step
 
-Facing Problems? contact me at [LinkedIn](https://www.linkedin.com/in/lamsanskar/) i am also happy to help;
+Facing Problems? contact me at [LinkedIn](https://www.linkedin.com/in/lamsanskar/) i am always happy to help;
 
 ## Show Support
 * [Recommend Me On LinkedIn](https://www.linkedin.com/in/lamsanskar/) - I will realy Appriciate this
