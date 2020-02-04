@@ -6,6 +6,8 @@ UI created getting inspired from one share on dribble with flutter, after gettin
 
 To use just connect to firebase, All the things are done just add the googleservice.json file and ios GoogleService-Info.plish and you are done. 
 
+Do ⭐ the repo it really motivates me to share more open source
+
 ## Setup Process in Two Steps
 ## 1. Connect with Firebase Android 
 So for this first login to the firebase create a project and then > Project Overview then enter the "Package Name" for this project it is com.theindianappguy.rest_app 
@@ -24,7 +26,7 @@ then open the runner and there will be the "Bundle Id" copy that and
 
 <img width="617" alt="Screenshot 2020-02-04 at 1 45 34 PM" src="https://user-images.githubusercontent.com/55942632/73726023-a5a37780-4754-11ea-8afa-c7b6f7442ff1.png">
 
-#### Next >
+#### Register app >
 
 <img width="687" alt="Screenshot 2020-02-04 at 1 49 02 PM" src="https://user-images.githubusercontent.com/55942632/73726261-24001980-4755-11ea-8b0e-c704cfdb67d0.png">
 
