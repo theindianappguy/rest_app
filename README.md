@@ -2,7 +2,9 @@
 
 # Authentication + Splash Screen (Android) Flutter UI + Firebase Authentication Added
 
-UI created getting inspired from one share on dribble with flutter, after getting amazing responce added Firebase Authentication to use just connect to firebase all the things are done just add the googleservice.json file and ios GoogleService-Info.plish and you are done. 
+UI created getting inspired from one share on dribble with flutter, after getting amazing responce, Added Firebase Authentication
+
+To use just connect to firebase, All the things are done just add the googleservice.json file and ios GoogleService-Info.plish and you are done. 
 
 ## Setup Process in Two Steps
 ## 1. Connect with Firebase Android 
