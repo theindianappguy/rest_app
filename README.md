@@ -1,5 +1,11 @@
 ![rest_app](https://user-images.githubusercontent.com/55942632/73445975-edf01d80-4381-11ea-9b8f-3bc57490c93f.png)
 
+
+<a href="https://twitter.com/Theindianappguy">
+    <img src="https://img.shields.io/github/stars/theindianappguy/rest_app?style=for-the-badge" alt="Total downloads on GitHub." /></a>
+<a href="https://www.linkedin.com/in/lamsanskar/">
+    <img src="https://img.shields.io/badge/Support-Recommed%2FEndorse%20me%20on%20Linkedin-blue?style=for-the-badge&logo=linkedin" alt="Recommend me on LinkedIn" /></a>
+
 # Rest App, with Firebase Auth + SplashScreen
 
 UI created getting inspired from one share on dribble with flutter, after getting amazing responce, Added Firebase Authentication
@@ -34,13 +40,5 @@ then open the runner and there will be the "Bundle Id" copy that and
 
 Facing Problems? contact me at [LinkedIn](https://www.linkedin.com/in/lamsanskar/) i am always happy to help;
 
-## Show Support
-* [Recommend Me On LinkedIn](https://www.linkedin.com/in/lamsanskar/) - I will realy Appriciate this
-* Don't forget to star ⭐ the repo 😉, it's FREE.
+Don't forget to star ⭐ the repo 😉, it's FREE.
 
-## Requirements
-- Any Operating System (ie. MacOS X, Linux, Windows)
-- Android Studio/Visual Studio Code
-
-## Join Us
-* [Join Our Facebook Group](https://www.facebook.com/groups/519517995532897/) - I share a lot of value in it
