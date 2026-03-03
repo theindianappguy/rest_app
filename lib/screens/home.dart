@@ -3,13 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rest_app/services/auth_services.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
-  _HomeState createState() => _HomeState();
+  State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
-  AuthService _authService = AuthService();
+  final AuthService _authService = AuthService();
   bool _loading = false;
 
   @override
@@ -18,46 +19,43 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.black54,
       appBar: AppBar(
         title: Text(
-          "RESTAPP",
+          'RESTAPP',
           style: GoogleFonts.roboto(
-              textStyle: TextStyle(fontSize: 18, letterSpacing: 1)),
+            textStyle: const TextStyle(fontSize: 18, letterSpacing: 1),
+          ),
         ),
         backgroundColor: Colors.black87,
         centerTitle: true,
-        actions: <Widget>[
-
-        ],
+        actions: const <Widget>[],
       ),
-      body: _loading ? Container(
-        alignment: Alignment.center,
-        child: CircularProgressIndicator(),
-      ) : Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("Hello World"),
-            SizedBox(height: 30,),
-            FlatButton(
-              color: Color(0xff465EFB),
-              onPressed: () async {
-                setState(() {
-                  _loading = true;
-                });
-               dynamic result = await _authService.signOut();
-               if(result == null){
-                 print("error");
-               }else{
-                 print("success");
-               }
-               setState(() {
-                 _loading = false;
-               });
-              },
-              child: Text("Log Out"),
+      body: _loading
+          ? const Center(
+              child: CircularProgressIndicator(),
             )
-          ],
-        )
-      ),
+          : Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text('Hello World'),
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff465EFB),
+                    ),
+                    onPressed: () async {
+                      setState(() {
+                        _loading = true;
+                      });
+                      await _authService.signOut();
+                      setState(() {
+                        _loading = false;
+                      });
+                    },
+                    child: const Text('Log Out'),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }

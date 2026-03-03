@@ -1,59 +1,81 @@
 ![rest_app](https://user-images.githubusercontent.com/55942632/73445975-edf01d80-4381-11ea-9b8f-3bc57490c93f.png)
 
-# Rest App, with Firebase Auth + SplashScreen
+# Rest App - Flutter Restaurant App with Firebase Auth + Splash Screen
 
-UI created getting inspired from one share on dribble with flutter, after getting amazing responce, Added Firebase Authentication
+A beautiful restaurant app UI built with Flutter, featuring Firebase Authentication (Email/Password and Anonymous) and biometric login (Fingerprint / FaceID) support.
 
-To use just connect to firebase, All the things are done just add the googleservice.json file and ios GoogleService-Info.plish and you are done. 
+## Features
 
-Do ⭐ the repo it really motivates me to share more open source
+- Firebase Email/Password Authentication
+- Anonymous Sign-In via Biometric Authentication (Fingerprint / FaceID)
+- Stream-based auth state management with Provider
+- Dark-themed restaurant UI inspired by Dribbble designs
+- Null-safe codebase targeting Dart 3 / Flutter 3
 
-## Setup Process in Two Steps
-1. Connect with Firebase Android 
-So for this first login to the firebase create a project and then > Project Overview then enter the "Package Name" for this project it is com.theindianappguy.rest_app 
+## Screenshots
 
-<img width="584" alt="Screenshot 2020-02-04 at 1 14 47 PM" src="https://user-images.githubusercontent.com/55942632/73725813-30d03d80-4754-11ea-80d5-0478aca43857.png">
+![rest_app](https://user-images.githubusercontent.com/55942632/73445975-edf01d80-4381-11ea-9b8f-3bc57490c93f.png)
 
-#### Next >
+## Prerequisites
 
-<img width="682" alt="Screenshot 2020-02-04 at 1 15 03 PM" src="https://user-images.githubusercontent.com/55942632/73725873-578e7400-4754-11ea-8b95-44bcbf6370f6.png">
-
-#### Next > Next > Skip this step
-
-2. Connect with Firebase IOS
-Open any file inside the ios directory in the main project then there will be option to open it in xcode at the top right hand corner , or you can just open the ios directory with Xcode
-then open the runner and there will be the "Bundle Id" copy that and 
-
-<img width="617" alt="Screenshot 2020-02-04 at 1 45 34 PM" src="https://user-images.githubusercontent.com/55942632/73726023-a5a37780-4754-11ea-8afa-c7b6f7442ff1.png">
-
-Register app >
-
-<img width="687" alt="Screenshot 2020-02-04 at 1 49 02 PM" src="https://user-images.githubusercontent.com/55942632/73726261-24001980-4755-11ea-8b0e-c704cfdb67d0.png">
-
-Next > Next > Skip this step
-
-Facing Problems? contact me at [LinkedIn](https://www.linkedin.com/in/lamsanskar/) i am always happy to help;
+- Flutter 3.10+ and Dart 3.0+
+- A Firebase project with Authentication enabled
+- Android: `google-services.json` placed in `android/app/`
+- iOS: `GoogleService-Info.plist` placed in `ios/Runner/`
 
 ## Installation
 
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/theindianappguy/rest_app.git
+cd rest_app
 ```
+
+2. **Set up Firebase**
+
+   - Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
+   - Enable **Email/Password** and **Anonymous** sign-in methods under Authentication
+   - Download `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) and place them in the paths listed above
+
+3. **Install dependencies**
+
+```bash
 flutter pub get
 ```
-Usage 
 
-```
+4. **Run the app**
+
+```bash
 flutter run
 ```
 
-### Created & Maintained By
+## Project Structure
+
+```
+lib/
+ |- main.dart                          # App entry point with Firebase init
+ |- models/
+ |   |- dart.dart                      # AppUser model
+ |- screens/
+ |   |- home.dart                      # Home screen after login
+ |   |- wrapper.dart                   # Auth-state routing wrapper
+ |   |- authenticate/
+ |       |- authenticate.dart          # Toggle between SignIn / SignUp
+ |       |- signin.dart                # Sign-in screen with biometric option
+ |       |- signup.dart                # Sign-up screen
+ |- services/
+     |- auth_services.dart             # Firebase Auth service layer
+```
+
+## Created & Maintained By
 
 [Sanskar Tiwari](https://github.com/theindianappguy) ([@indianappguy](https://twitter.com/indianappguy)) ([YouTube](https://www.youtube.com/c/SanskarTiwari))
 
 > If you found this project helpful or you learned something from the source code and want to thank me,
-> consider checking out what i am building at [MagicSlides.app](https://www.magicslides.app), [MagicForm.app](https://www.magicform.app) & [SheetAI.app](https://www.sheetai.app)
+> consider checking out what I am building at [MagicSlides.app](https://www.magicslides.app), [MagicForm.app](https://www.magicform.app) & [SheetAI.app](https://www.sheetai.app)
 
-
-### License
+## License
 
     Copyright 2020 Sanskar Tiwari
 
@@ -68,5 +90,3 @@ flutter run
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
